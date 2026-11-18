@@ -1,0 +1,10 @@
+import Link from 'next/link';
+import {ArrowUpRight,CalendarDays} from 'lucide-react';
+import {getEvents} from '@/lib/data';
+export const dynamic='force-dynamic';
+export default async function EventsPage(){
+ const upcoming=await getEvents('upcoming');
+ const past=await getEvents('past');
+ const card=(e:any,kind:string)=><article className="event-card" key={e.id}><div className="card-image" style={{backgroundImage:e.poster_url?'url('+e.poster_url+')':undefined}}><span>{kind}</span></div><div className="card-body"><small><CalendarDays size={13}/> {new Date(e.date).toLocaleDateString('en-IN',{day:'numeric',month:'long',year:'numeric'})}</small><h3>{e.title}</h3><p>{e.description}</p><Link href={'/events/'+e.slug}>{kind==='UPCOMING'?'Event details & registration':'View recap & gallery'} <ArrowUpRight size={15}/></Link></div></article>;
+ return <main className="events-page"><div className="events-intro"><div className="eyebrow">NULL KOCHI / EVENTS</div><h1>Meet, learn & <em>share.</em></h1><p>Explore upcoming gatherings, revisit past sessions and discover the people and ideas shaping the NULL Kochi community.</p><div className="events-tabs"><a className="active" href="#upcoming">UPCOMING · {upcoming.length}</a><a href="#past">PAST EVENTS · {past.length}</a></div></div><section className="events-list-section" id="upcoming"><div className="eyebrow">01 / COMING UP</div><h2>Upcoming <em>events.</em></h2>{upcoming.length?<div className="event-grid">{upcoming.map(e=>card(e,'UPCOMING'))}</div>:<div className="empty-state"><b>No upcoming events announced yet.</b><p>Check back soon or follow our community channels for announcements.</p></div>}</section><section className="events-list-section" id="past"><div className="eyebrow">02 / FROM THE ARCHIVE</div><h2>Past <em>events.</em></h2>{past.length?<div className="event-grid">{past.map(e=>card(e,'PAST EVENT'))}</div>:<div className="empty-state"><b>Our archive is growing.</b><p>Past sessions and event galleries will appear here.</p></div>}</section></main>
+}
