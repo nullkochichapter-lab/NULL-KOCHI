@@ -569,3 +569,27 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',Arial,sans-ser
  .contact-strip{align-items:stretch;gap:20px}
  .speak-volunteer-button{width:100%;min-height:50px;text-align:center}
 }
+
+/* Community overview and dedicated events archive */
+.about-intro{grid-template-columns:minmax(0,1fr)!important}
+.chapter-band h2{max-width:900px}
+.chapter-band p{max-width:920px;line-height:1.9}
+.events-page{min-height:70vh;background:#081321;padding:clamp(54px,8vw,100px) clamp(21px,8vw,120px) 90px}
+.events-page .events-intro{max-width:760px;margin-bottom:42px}
+.events-page h1{font:600 clamp(44px,7vw,76px)/1.02 'Space Grotesk';letter-spacing:-.055em;margin:18px 0}
+.events-page h1 em{color:var(--green);font-style:normal}
+.events-page .events-intro p{max-width:640px;color:#a9bac8;line-height:1.8}
+.events-tabs{display:flex;gap:10px;border-bottom:1px solid #294258;margin:36px 0 26px}
+.events-tabs a{padding:13px 18px;color:#a9bac8;font:11px 'DM Mono';letter-spacing:.08em}
+.events-tabs a.active{color:var(--green);border-bottom:2px solid var(--green)}
+.events-list-section{scroll-margin-top:90px;margin:42px 0 66px}
+.events-list-section h2{font:600 clamp(30px,4vw,42px)/1.1 'Space Grotesk';margin-bottom:22px}
+.events-list-section h2 em{color:var(--green);font-style:normal}
+.events-page .event-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.events-page .card-image{aspect-ratio:1/1;height:auto}
+@media(max-width:700px){
+ .events-page{padding:54px 20px 70px}
+ .events-page .event-grid{grid-template-columns:minmax(0,1fr)}
+ .events-tabs{gap:0}
+ .events-tabs a{padding:12px 14px;font-size:9px}
+}
