@@ -1,0 +1,7 @@
+'use client';
+
+import {useEffect,useState} from 'react';
+
+type Parts={days:number;hours:number;minutes:number;seconds:number;ended:boolean};
+function calculate(target:number):Parts{const distance=Math.max(0,target-Date.now());return {days:Math.floor(distance/86400000),hours:Math.floor(distance/3600000)%24,minutes:Math.floor(distance/60000)%60,seconds:Math.floor(distance/1000)%60,ended:distance===0};}
+export default function EventCountdown({date,compact=false}:{date:string;compact?:boolean}){const target=new Date(date).getTime();const [parts,setParts]=useState<Parts|null>(null);useEffect(()=>{if(!Number.isFinite(target))return;const tick=()=>setParts(calculate(target));tick();const id=window.setInterval(tick,1000);return()=>window.clearInterval(id)},[target]);if(!Number.isFinite(target))return null;if(parts?.ended)return <div className={compact?'event-countdown compact':'event-countdown'}><span className="countdown-live-dot"/> {new Date(target).toDateString()===new Date().toDateString()?'HAPPENING TODAY':'EVENT STARTED'}</div>;const units=[['DAYS',parts?.days],['HRS',parts?.hours],['MIN',parts?.minutes],['SEC',parts?.seconds]] as const;return <div className={compact?'event-countdown compact':'event-countdown'} aria-label="Time remaining until event"><span className="countdown-label">STARTS IN</span><div className="countdown-units">{units.map(([label,value])=><div className="countdown-unit" key={label}><b>{value===undefined?'--':String(value).padStart(2,'0')}</b><small>{label}</small></div>)}</div></div>;}
