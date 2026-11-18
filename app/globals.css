@@ -538,3 +538,34 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',Arial,sans-ser
 
 .admin-logo{display:block;width:142px;height:auto;filter:brightness(0) invert(1)}.admin-side .brand{display:flex;align-items:center;min-height:40px}
 @media(max-width:700px){.admin-logo{width:116px}}
+
+/* Final layout corrections requested from mobile review */
+:root{--green:#78e4d5;--green2:#4fc8bb}
+.hero-meta,.hero-bottom{display:none!important}
+.chapter-band{grid-template-columns:minmax(0,1fr);padding-block:76px}
+.chapter-band .chapter-number,.chapter-band .chapter-tags{display:none!important}
+.free-section{grid-template-columns:minmax(0,1fr) 120px;gap:34px;padding-block:76px}
+.free-section h2{color:#f2f6fa!important}
+.free-section h2 em{color:#78e4d5!important}
+.free-section p{color:#b6c6d3!important}
+.free-stamp{border-color:#4d8990;background:#102b3a}
+.free-stamp b{color:#78e4d5}
+.poster,.card-image,.detail-poster{aspect-ratio:1/1;min-height:0;height:auto;background-size:cover;background-position:center}
+.poster{width:100%;align-self:start}
+.featured-event{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start}
+.card-image{width:100%}
+.speak-volunteer-button{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:15px 19px;border-radius:5px;background:#78e4d5;color:#071722!important;font-weight:700;font-size:12px;transition:transform .2s ease,background .2s ease}
+.speak-volunteer-button:hover{background:#a0f0e6;transform:translateY(-2px)}
+.contact-strip{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.contact-strip>div{display:flex;flex-direction:column;gap:10px}
+@media(max-width:700px){
+ .featured-event{grid-template-columns:minmax(0,1fr)}
+ .poster{width:100%;aspect-ratio:1/1;min-height:0}
+ .card-image{aspect-ratio:1/1;height:auto;min-height:0}
+ .detail-poster{aspect-ratio:1/1;min-height:0}
+ .chapter-band{padding:58px 21px}
+ .free-section{grid-template-columns:minmax(0,1fr);padding:58px 21px;gap:22px}
+ .free-stamp{grid-column:auto;width:94px;height:94px}
+ .contact-strip{align-items:stretch;gap:20px}
+ .speak-volunteer-button{width:100%;min-height:50px;text-align:center}
+}
