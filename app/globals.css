@@ -131,3 +131,46 @@
  .footer{padding-top:42px}
  .footer-logo{width:160px;height:52px}
 }
+
+/* Production polish: accessible controls, balanced layouts and consistent spacing */
+html{scroll-padding-top:96px}
+body{overflow-x:hidden;line-height:1.55}
+img{max-width:100%}
+:focus-visible{outline:2px solid var(--green);outline-offset:4px}
+.nav{min-width:0}
+.nav .brand{min-width:0;flex-shrink:0}
+.nav-logo{display:block;flex-shrink:0;width:176px;height:auto;max-height:56px;object-fit:contain;object-position:left center;filter:brightness(0) invert(1);mix-blend-mode:normal}
+.hero-clean .hero-logo{display:block;width:min(560px,82vw);height:auto;max-height:150px;object-fit:contain;object-position:left center;filter:brightness(0) invert(1);mix-blend-mode:normal;margin:8px 0 30px}
+.about-mark{overflow:hidden}
+.about-section-logo{display:block;width:100%;height:auto;filter:brightness(0) invert(1)}
+.footer-logo{display:block;width:190px;height:auto;max-height:66px;filter:brightness(0) invert(1)}
+.community-logo{filter:brightness(0) invert(1)}
+.section-head h2,.connect h2,.hero-clean h1{text-wrap:balance}
+.contact-strip{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;margin-top:54px;padding:26px 30px;border:1px solid #343434;background:linear-gradient(110deg,#111,#090909);gap:20px}
+.contact-strip>div{display:flex;flex-direction:column;gap:8px;min-width:0}
+.contact-strip small{font:10px 'DM Mono';letter-spacing:.12em;color:var(--green)}
+.contact-strip b{font:600 18px 'Space Grotesk';color:#eee}
+.contact-strip>a{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 17px;background:var(--green);color:#080808;font-size:12px;font-weight:700;white-space:nowrap}
+.contact-strip>a:hover{background:#e5ff89}
+.social-card{min-height:88px}
+.social-card:focus-visible,.people-nav a:focus-visible,.button:focus-visible{outline-offset:3px}
+.footer-links{flex-wrap:wrap;row-gap:12px}
+@media(max-width:900px){.nav nav{gap:20px}.nav-logo{width:158px}.contact-strip{align-items:flex-start}}
+@media(max-width:700px){
+ html{scroll-padding-top:78px}
+ .nav-logo{width:142px;max-height:48px}
+ .hero-clean .hero-logo{width:min(440px,92vw);max-height:118px;margin:2px 0 25px}
+ .about-mark{height:125px;padding:18px}
+ .about-section-logo{max-height:88px}
+ .connect{padding-top:76px!important;padding-bottom:88px!important}
+ .connect h2{font-size:clamp(38px,10vw,50px);line-height:1.08}
+ .social-grid{grid-template-columns:1fr;gap:10px;margin-top:30px!important;margin-bottom:34px!important}
+ .social-card{min-height:76px;padding:17px}
+ .contact-strip{margin-top:34px;padding:21px 18px;flex-direction:column;align-items:stretch;gap:18px}
+ .contact-strip b{font-size:16px;line-height:1.4}
+ .contact-strip>a{width:100%}
+ .footer{padding-top:42px}
+ .footer-links{gap:12px 18px}
+ .footer-bottom{line-height:1.7}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
