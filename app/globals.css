@@ -103,3 +103,31 @@
 .people-admin-list .managed-event>div{flex:1}
 @media(max-width:900px){.people-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.person-photo{height:230px}}
 @media(max-width:700px){.nav-logo{width:145px;max-height:48px}.footer-logo{width:175px}.community-hero{padding:65px 22px}.community-logo{width:min(370px,90vw);margin:10px 0 32px}.community-hero h1{font-size:47px}.people-section{padding:65px 22px}.people-grid{grid-template-columns:1fr}.person-photo{height:280px}.people-join{padding:58px 22px}}
+
+/* Final logo and spacing corrections */
+.nav-logo,.hero-clean .hero-logo,.footer-logo,.about-section-logo,.community-logo{
+  filter:brightness(0) invert(1);
+  mix-blend-mode:normal!important;
+}
+.nav-logo{width:168px;height:54px;object-fit:contain;object-position:left center}
+.hero-clean .hero-logo{width:min(620px,82vw);max-height:150px;object-fit:contain;object-position:left center;margin:6px 0 34px}
+.footer-logo{width:190px;height:64px;object-fit:contain;object-position:left center}
+.about-mark{width:min(300px,100%);height:170px;border:1px solid #292929;background:linear-gradient(145deg,#121212,#080808);display:flex;align-items:center;justify-content:center;padding:28px}
+.about-section-logo{width:100%;height:auto;object-fit:contain}
+.connect{padding-top:105px!important;padding-bottom:135px!important;overflow:hidden}
+.connect h2{max-width:100%;margin-bottom:22px}
+.connect>p{max-width:650px;line-height:1.9;margin-bottom:0}
+.social-grid{margin-top:46px!important;margin-bottom:52px!important;gap:14px!important}
+.contact-strip{margin-top:0!important;padding:26px 28px!important;gap:28px}
+.footer{padding-top:55px}
+@media(max-width:700px){
+ .nav-logo{width:138px;height:46px}
+ .hero-clean .hero-logo{width:min(460px,92vw);max-height:115px;margin-bottom:30px}
+ .about-mark{width:100%;height:125px;padding:24px}
+ .connect{padding-top:72px!important;padding-bottom:90px!important}
+ .connect h2{font-size:clamp(39px,10vw,54px);line-height:1.08}
+ .social-grid{margin-top:32px!important;margin-bottom:35px!important}
+ .contact-strip{padding:21px 18px!important;flex-direction:column;align-items:flex-start}
+ .footer{padding-top:42px}
+ .footer-logo{width:160px;height:52px}
+}
