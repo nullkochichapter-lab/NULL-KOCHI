@@ -1,0 +1,1 @@
+export default function Footer(){return <footer className="footer"><div><div className="brand"><span className="brand-mark">N</span><span>NULL <b>KOCHI</b></span></div><p>Learn. Share. Secure.</p></div><span>© {new Date().getFullYear()} NULL KOCHI. Built for the community.</span></footer>}
