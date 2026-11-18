@@ -1,6 +1,3 @@
-import type { Metadata } from 'next';
-import './globals.css';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-export const metadata:Metadata={title:'NULL KOCHI — Cybersecurity Community',description:'A community for cybersecurity learners, builders and defenders.'};
+import type { Metadata } from 'next';import './globals.css';import Navbar from '@/components/Navbar';import Footer from '@/components/Footer';
+export const metadata:Metadata={title:'NULL KOCHI — Cybersecurity Community',description:'An independent cybersecurity community in Kochi. Learn, build, share and secure together.',openGraph:{title:'NULL KOCHI — Cybersecurity Community',description:'Curiosity is our greatest exploit.',type:'website'}};
 export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="en"><body><Navbar/><main>{children}</main><Footer/></body></html>}
